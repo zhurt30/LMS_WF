@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainBook));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dtpIntime = new System.Windows.Forms.DateTimePicker();
@@ -48,9 +49,9 @@
             this.dgvBookList = new System.Windows.Forms.DataGridView();
             this.bookcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pubname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbbookinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_LibraryMSDataSet = new LMS_WindowsForms.db_LibraryMSDataSet();
             this.tb_bookinfoTableAdapter = new LMS_WindowsForms.db_LibraryMSDataSetTableAdapters.tb_bookinfoTableAdapter();
@@ -80,33 +81,34 @@
             this.groupBox1.Controls.Add(this.Lbl_Bookcode);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 183);
+            this.groupBox1.Size = new System.Drawing.Size(755, 192);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Library Information System";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(510, 149);
+            this.btnDelete.Location = new System.Drawing.Point(521, 135);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete book";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // dtpIntime
             // 
             this.dtpIntime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpIntime.Location = new System.Drawing.Point(315, 93);
+            this.dtpIntime.Location = new System.Drawing.Point(608, 73);
             this.dtpIntime.Name = "dtpIntime";
-            this.dtpIntime.Size = new System.Drawing.Size(154, 20);
+            this.dtpIntime.Size = new System.Drawing.Size(100, 20);
             this.dtpIntime.TabIndex = 12;
             // 
             // txtPublisher
             // 
-            this.txtPublisher.Location = new System.Drawing.Point(81, 93);
+            this.txtPublisher.Location = new System.Drawing.Point(81, 73);
             this.txtPublisher.Name = "txtPublisher";
-            this.txtPublisher.Size = new System.Drawing.Size(100, 20);
+            this.txtPublisher.Size = new System.Drawing.Size(334, 20);
             this.txtPublisher.TabIndex = 11;
             // 
             // txtPrice
@@ -133,7 +135,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(367, 149);
+            this.btnClear.Location = new System.Drawing.Point(366, 135);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 7;
@@ -143,7 +145,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(228, 149);
+            this.btnEdit.Location = new System.Drawing.Point(228, 135);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 6;
@@ -153,7 +155,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(65, 149);
+            this.btnAdd.Location = new System.Drawing.Point(66, 135);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 5;
@@ -164,7 +166,7 @@
             // Lbl_Intime
             // 
             this.Lbl_Intime.AutoSize = true;
-            this.Lbl_Intime.Location = new System.Drawing.Point(225, 100);
+            this.Lbl_Intime.Location = new System.Drawing.Point(518, 80);
             this.Lbl_Intime.Name = "Lbl_Intime";
             this.Lbl_Intime.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Intime.TabIndex = 4;
@@ -173,7 +175,7 @@
             // Lbl_Publisher
             // 
             this.Lbl_Publisher.AutoSize = true;
-            this.Lbl_Publisher.Location = new System.Drawing.Point(21, 100);
+            this.Lbl_Publisher.Location = new System.Drawing.Point(18, 76);
             this.Lbl_Publisher.Name = "Lbl_Publisher";
             this.Lbl_Publisher.Size = new System.Drawing.Size(49, 13);
             this.Lbl_Publisher.TabIndex = 3;
@@ -209,23 +211,24 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvBookList);
-            this.groupBox2.Location = new System.Drawing.Point(16, 244);
+            this.groupBox2.Location = new System.Drawing.Point(16, 235);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(772, 194);
+            this.groupBox2.Size = new System.Drawing.Size(755, 203);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Book Information";
             // 
             // dgvBookList
             // 
+            this.dgvBookList.AllowUserToOrderColumns = true;
             this.dgvBookList.AutoGenerateColumns = false;
             this.dgvBookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBookList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bookcode,
             this.bookname,
-            this.priceDataGridViewTextBoxColumn,
-            this.pubname,
-            this.inTimeDataGridViewTextBoxColumn});
+            this.price,
+            this.publisher,
+            this.inTime});
             this.dgvBookList.DataSource = this.tbbookinfoBindingSource;
             this.dgvBookList.Location = new System.Drawing.Point(20, 19);
             this.dgvBookList.MultiSelect = false;
@@ -247,23 +250,23 @@
             this.bookname.HeaderText = "bookname";
             this.bookname.Name = "bookname";
             // 
-            // priceDataGridViewTextBoxColumn
+            // price
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "price";
+            this.price.Name = "price";
             // 
-            // pubname
+            // publisher
             // 
-            this.pubname.DataPropertyName = "pubname";
-            this.pubname.HeaderText = "publisher";
-            this.pubname.Name = "pubname";
+            this.publisher.DataPropertyName = "pubname";
+            this.publisher.HeaderText = "publisher";
+            this.publisher.Name = "publisher";
             // 
-            // inTimeDataGridViewTextBoxColumn
+            // inTime
             // 
-            this.inTimeDataGridViewTextBoxColumn.DataPropertyName = "inTime";
-            this.inTimeDataGridViewTextBoxColumn.HeaderText = "inTime";
-            this.inTimeDataGridViewTextBoxColumn.Name = "inTimeDataGridViewTextBoxColumn";
+            this.inTime.DataPropertyName = "inTime";
+            this.inTime.HeaderText = "inTime";
+            this.inTime.Name = "inTime";
             // 
             // tbbookinfoBindingSource
             // 
@@ -283,9 +286,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMainBook";
             this.Text = "FrmMainBook";
             this.Load += new System.EventHandler(this.FrmMainBook_Load);
@@ -321,12 +326,12 @@
         private db_LibraryMSDataSet db_LibraryMSDataSet;
         private System.Windows.Forms.BindingSource tbbookinfoBindingSource;
         private db_LibraryMSDataSetTableAdapters.tb_bookinfoTableAdapter tb_bookinfoTableAdapter;
+        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pubname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publisher;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inTime;
     }
 }
 

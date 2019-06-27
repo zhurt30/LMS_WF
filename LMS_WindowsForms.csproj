@@ -52,25 +52,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_LibraryMSDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEditBook.Designer.cs">
-      <DependentUpon>FrmEditBook.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMainBook.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMainBook.Designer.cs">
       <DependentUpon>FrmMainBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmEditBook.resx">
-      <DependentUpon>FrmEditBook.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmMainBook.resx">
       <DependentUpon>FrmMainBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="db_LibraryMSDataSet.xsc">
       <DependentUpon>db_LibraryMSDataSet.xsd</DependentUpon>
     </None>

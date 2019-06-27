@@ -19,16 +19,19 @@ namespace LMS_WindowsForms
             this.dgvBookList.AutoGenerateColumns = false;
         }
 
-        SqlConnection con = new SqlConnection(" server =. ;  database= db_LibraryMS; Integrated Security = SSPI; Persist Security info= False");
-        SqlCommand cmd = new SqlCommand();
-        SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        DataSet dataSet = new DataSet();
+    
 
 
 
 
         private void FrmMainBook_Load(object sender, EventArgs e)
         {
+            LoginForm loginForm = new LoginForm();
+           // loginForm.MdiParent = this;
+           
+            loginForm.Show();
+           // this.Dispose();
+           
             
 
 
@@ -40,18 +43,20 @@ namespace LMS_WindowsForms
 
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
+
+        public int ExecuteNonQuery(string sql)
         {
+
             string connString = "server=localhost;database=db_LibraryMS;Trusted_Connection=SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                //connect database
-                conn.Open();
-                string sql = "insert into tb_bookinfo(bookcode,bookname,price,pubname,inTime) values (@bookcode,@bookname,@price,@pubname,@inTime)";
+                //connect database
+                conn.Open();
+               
 
-                //
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                //
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.Add(new SqlParameter("@bookcode", SqlDbType.NVarChar, 30));
                     cmd.Parameters.Add(new SqlParameter("@BookName", SqlDbType.NVarChar, 50));
@@ -70,14 +75,27 @@ namespace LMS_WindowsForms
 
 
                     //
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("insert won!", "wanning");
+                   return cmd.ExecuteNonQuery();
+                   
 
                 }
             }
 
 
 
+        }
+
+
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+        
+                string sql = "insert into tb_bookinfo(bookcode,bookname,price,pubname,inTime) values (@bookcode,@bookname,@price,@pubname,@inTime)";
+                ExecuteNonQuery(sql);
+            this.tb_bookinfoTableAdapter.Fill(this.db_LibraryMSDataSet.tb_bookinfo);
+            MessageBox.Show("insert successful!");
+
+   
         }
 
 
@@ -111,13 +129,24 @@ namespace LMS_WindowsForms
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-           Object obj = dgvBookList.CurrentRow.DataBoundItem;
-            DataRowView row = (DataRowView)obj;
-           
+            //Object obj = dgvBookList.CurrentRow.DataBoundItem;
+            // DataRowView row = (DataRowView)obj;
+
+            string sql = "update tb_bookinfo set bookcode=@bookcode,bookname=@bookname,price=@price,pubname=@pubname,inTime=@inTime where bookcode= @bookcode";
+
+            ExecuteNonQuery(sql);
+            this.tb_bookinfoTableAdapter.Fill(this.db_LibraryMSDataSet.tb_bookinfo);
+            MessageBox.Show("edit successful!");
         }
 
         private void DgvBookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtBarCode.Text = dgvBookList.CurrentRow.Cells["bookcode"].Value.ToString();
+            txtBookName.Text = dgvBookList.CurrentRow.Cells["bookname"].Value.ToString();
+            txtPrice.Text = dgvBookList.CurrentRow.Cells["price"].Value.ToString();
+            txtPublisher.Text = dgvBookList.CurrentRow.Cells["publisher"].Value.ToString();
+            dtpIntime.Text = dgvBookList.CurrentRow.Cells["inTime"].Value.ToString();
+
 
         }
 
@@ -127,6 +156,14 @@ namespace LMS_WindowsForms
             {
                 dgvBookList[i, e.RowIndex].Style.BackColor = Color.Yellow;
             }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            string sql = "delete from tb_bookinfo where bookcode= @bookcode";
+            ExecuteNonQuery(sql);
+            this.tb_bookinfoTableAdapter.Fill(this.db_LibraryMSDataSet.tb_bookinfo);
+            MessageBox.Show("delete successful!");
         }
     }
 }
