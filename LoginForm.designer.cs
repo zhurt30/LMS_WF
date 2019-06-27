@@ -43,42 +43,42 @@
             // Lbl_UserName
             // 
             this.Lbl_UserName.AutoSize = true;
-            this.Lbl_UserName.Location = new System.Drawing.Point(49, 58);
+            this.Lbl_UserName.Location = new System.Drawing.Point(49, 63);
             this.Lbl_UserName.Name = "Lbl_UserName";
-            this.Lbl_UserName.Size = new System.Drawing.Size(59, 12);
+            this.Lbl_UserName.Size = new System.Drawing.Size(60, 13);
             this.Lbl_UserName.TabIndex = 0;
             this.Lbl_UserName.Text = "User Name";
             // 
             // Lbl_Password
             // 
             this.Lbl_Password.AutoSize = true;
-            this.Lbl_Password.Location = new System.Drawing.Point(49, 98);
+            this.Lbl_Password.Location = new System.Drawing.Point(49, 106);
             this.Lbl_Password.Name = "Lbl_Password";
-            this.Lbl_Password.Size = new System.Drawing.Size(53, 12);
+            this.Lbl_Password.Size = new System.Drawing.Size(53, 13);
             this.Lbl_Password.TabIndex = 1;
             this.Lbl_Password.Text = "Password";
             // 
             // Txt_UserName
             // 
-            this.Txt_UserName.Location = new System.Drawing.Point(128, 58);
+            this.Txt_UserName.Location = new System.Drawing.Point(128, 63);
             this.Txt_UserName.Name = "Txt_UserName";
-            this.Txt_UserName.Size = new System.Drawing.Size(171, 21);
+            this.Txt_UserName.Size = new System.Drawing.Size(171, 20);
             this.Txt_UserName.TabIndex = 2;
             // 
             // Txt_Password
             // 
-            this.Txt_Password.Location = new System.Drawing.Point(128, 95);
+            this.Txt_Password.Location = new System.Drawing.Point(128, 103);
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.PasswordChar = '*';
-            this.Txt_Password.Size = new System.Drawing.Size(171, 21);
+            this.Txt_Password.Size = new System.Drawing.Size(171, 20);
             this.Txt_Password.TabIndex = 3;
             // 
             // Btn_Login
             // 
             this.Btn_Login.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Login.Location = new System.Drawing.Point(265, 150);
+            this.Btn_Login.Location = new System.Drawing.Point(265, 163);
             this.Btn_Login.Name = "Btn_Login";
-            this.Btn_Login.Size = new System.Drawing.Size(75, 21);
+            this.Btn_Login.Size = new System.Drawing.Size(75, 23);
             this.Btn_Login.TabIndex = 4;
             this.Btn_Login.Text = "Log in";
             this.Btn_Login.UseVisualStyleBackColor = false;
@@ -87,9 +87,9 @@
             // Btn_Cancel
             // 
             this.Btn_Cancel.BackColor = System.Drawing.Color.Transparent;
-            this.Btn_Cancel.Location = new System.Drawing.Point(364, 150);
+            this.Btn_Cancel.Location = new System.Drawing.Point(364, 163);
             this.Btn_Cancel.Name = "Btn_Cancel";
-            this.Btn_Cancel.Size = new System.Drawing.Size(75, 21);
+            this.Btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.Btn_Cancel.TabIndex = 5;
             this.Btn_Cancel.Text = "Cancel";
             this.Btn_Cancel.UseVisualStyleBackColor = false;
@@ -99,7 +99,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(173, 8);
+            this.label3.Location = new System.Drawing.Point(173, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 25);
             this.label3.TabIndex = 6;
@@ -108,19 +108,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(333, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(106, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(469, 195);
+            this.ClientSize = new System.Drawing.Size(481, 219);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Btn_Cancel);

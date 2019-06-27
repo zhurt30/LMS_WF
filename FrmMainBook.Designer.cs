@@ -131,7 +131,7 @@
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(96, 20);
             this.txtBarCode.TabIndex = 8;
-            this.txtBarCode.Validated += new System.EventHandler(this.TxtBarCode_Validated);
+          
             // 
             // btnClear
             // 

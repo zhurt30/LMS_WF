@@ -25,7 +25,7 @@ namespace LMS_WindowsForms
             Frm.ShowDialog();
         }
 
-        bool access = false;
+      bool access = false;
         SqlConnection connection;
         private void Btn_Login_Click(object sender, EventArgs e)
         {
@@ -123,7 +123,7 @@ namespace LMS_WindowsForms
                 }
                 DataRow row = userDT.Rows[0];
                 string dbPassword = (string)row["pwd"];
-               // bool dbStatus = (bool)row["UserStatus"];
+              
 
                 if (!dbPassword.Equals(password))
                 {
@@ -148,39 +148,23 @@ namespace LMS_WindowsForms
                     }
 
                 }
-                //else
-                //{
-                //    if (dbStatus == false)
-                //    {
-                //        DialogResult result = MessageBox.Show("This user is not actived!Do you want to registe to be a new user?",
-                //     "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //        if (result == DialogResult.Yes)
-                //        {
-                //            RegisterForm registerForm = new RegisterForm();
-                //            registerForm.MdiParent = this.MdiParent;
-                //            registerForm.Show();
-                //            this.Dispose();
-                //            return;
-                //        }
-                //        else
-                //        {
-                //            MessageBox.Show("This user is not actived ");
-                //            Txt_Password.Text = "";
-                //            Txt_UserName.Text = "";
-                //            Lbl_Password.ForeColor = Color.Red;
-                //            Lbl_UserName.ForeColor = Color.Red;
-                //            Txt_UserName.Focus();
-                //            return;
-                //        }
-
-                    //}
+               
                     else
                     {
                         access = true;
                         Lbl_Password.ForeColor = Color.Black;
                         Lbl_UserName.ForeColor = Color.Black;
                         MessageBox.Show("Login Successful");
-                    DialogResult = DialogResult.OK;
+
+                      FrmMainBook frmMainBook = new FrmMainBook();
+                     frmMainBook.MdiParent = this.MdiParent;
+                      frmMainBook.Show();
+                      this.Dispose();
+                    return;
+
+
+                    //  DialogResult = DialogResult.OK;
+
                     this.Dispose();
                 }
                 //}

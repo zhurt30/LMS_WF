@@ -112,21 +112,7 @@ namespace LMS_WindowsForms
             this.txtBarCode.Focus();
         }
 
-        private void TxtBarCode_Validated(object sender, EventArgs e)
-        {
-            if (txtBarCode.Text.Trim() == " " || txtBarCode.TextLength == 0)
-
-            {
-
-                MessageBox.Show("Book code can't be empty!", "wanning");
-                Lbl_Bookcode.ForeColor = Color.Red;
-                txtBarCode.Focus();
-
-                return;
-
-            }
-        }
-
+       
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             //Object obj = dgvBookList.CurrentRow.DataBoundItem;
