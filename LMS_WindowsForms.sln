@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28917.182
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS_WindowsForms", "LMS_WindowsForms.csproj", "{85D41192-064B-41A6-A63B-FB749186BD01}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LMS-WF", "..\LMS-WF\LMS-WF.vdproj", "{62A07B60-AD29-45CF-B967-1374CB06A8B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +15,6 @@ Global
 		{85D41192-064B-41A6-A63B-FB749186BD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85D41192-064B-41A6-A63B-FB749186BD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85D41192-064B-41A6-A63B-FB749186BD01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62A07B60-AD29-45CF-B967-1374CB06A8B4}.Debug|Any CPU.ActiveCfg = Debug
-		{62A07B60-AD29-45CF-B967-1374CB06A8B4}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

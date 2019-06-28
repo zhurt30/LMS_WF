@@ -163,11 +163,10 @@ namespace LMS_WindowsForms
                     return;
 
 
-                    //  DialogResult = DialogResult.OK;
 
-                    this.Dispose();
+                    
                 }
-                //}
+                
             }
             catch (Exception ex)
             {
